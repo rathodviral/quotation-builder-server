@@ -58,8 +58,8 @@ class Standard
         $query = "UPDATE " . $this->table_name . " SET standard_id = :standard_id, standard_name = :standard_name, standard_detail = :standard_detail, school_id = :school_id WHERE standard_id = :standard_id";
         $stmt = $this->connection->prepare($query);
         $stmt->bindParam(':standard_id', $this->$standard_id);
-        $stmt->bindParam(':name', $this->standard_name);
-        $stmt->bindParam(':detail', $this->standard_detail);
+        $stmt->bindParam(':standard_name', $this->standard_name);
+        $stmt->bindParam(':standard_detail', $this->standard_detail);
         $stmt->bindParam(':school_id', $this->school_id);
         if ($stmt->execute()) {
             return true;

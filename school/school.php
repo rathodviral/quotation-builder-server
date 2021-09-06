@@ -48,8 +48,8 @@ class School
         $query = "UPDATE " . $this->table_name . " SET school_id = :school_id, school_name = :school_name, school_detail = :school_detail WHERE school_id = :school_id";
         $stmt = $this->connection->prepare($query);
         $stmt->bindParam(':school_id', $this->$school_id);
-        $stmt->bindParam(':name', $this->school_name);
-        $stmt->bindParam(':detail', $this->school_detail);
+        $stmt->bindParam(':school_name', $this->school_name);
+        $stmt->bindParam(':school_detail', $this->school_detail);
         if ($stmt->execute()) {
             return true;
         }

@@ -59,8 +59,8 @@ class subject
         $query = "UPDATE " . $this->table_name . " SET subject_id = :subject_id, subject_name = :subject_name, subject_detail = :subject_detail, standard_id = :standard_id WHERE subject_id = :subject_id";
         $stmt = $this->connection->prepare($query);
         $stmt->bindParam(':subject_id', $this->$subject_id);
-        $stmt->bindParam(':name', $this->subject_name);
-        $stmt->bindParam(':detail', $this->subject_detail);
+        $stmt->bindParam(':subject_name', $this->subject_name);
+        $stmt->bindParam(':subject_detail', $this->subject_detail);
         $stmt->bindParam(':standard_id', $this->standard_id);
         if ($stmt->execute()) {
             return true;
